@@ -123,3 +123,39 @@ body {
     font-size: 1.2em;
     margin-top: 32px;
 }
+
+@media (max-width: 600px) {
+    .header-row {
+        flex-direction: column;
+        gap: 8px;
+    }
+    .header img.logo.side-logo,
+    .header img.logo.main-logo {
+        width: 60px;
+        margin: 0;
+    }
+    .header .title {
+        font-size: 1.3em;
+        margin: 0;
+    }
+    .header .nav {
+        flex-direction: column;
+        gap: 4px;
+        font-size: 1em;
+    }
+    .main {
+        max-width: 100%;
+        padding: 12px 4px 0 4px;
+    }
+    .section-item img {
+        height: 48px;
+    }
+    .section-label {
+        font-size: 1em;
+        padding: 2px 0;
+    }
+    .footer {
+        font-size: 1em;
+        padding: 16px 0;
+    }
+}
