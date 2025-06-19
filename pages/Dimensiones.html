@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="Logo.png" type="image/png">
+    <title>Dimensiones</title>
+    <style>
+        @font-face {
+            font-family: 'Minecraft';
+            src: url("../style/minecraftfont.eot");
+            src: url("../style/minecraftfont.woff") format("woff"), url("../style/minecraft.ttf") format("truetype");
+        }
+        body {
+            font-family: 'Minecraft', 'Arial Black', Arial, sans-serif;
+            background-color: #000000;
+            margin: 0;
+            padding: 0;
+            color: #FFFFFF;
+        }
+        /* Header moderno */
+        header {
+            background: #1E1E1E;
+            box-shadow: 0 4px 24px rgba(44, 62, 80, 0.15);
+            border-radius: 0 0 24px 24px;
+            padding-bottom: 32px;
+            position: relative;
+        }
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 32px 48px 0 48px;
+        }
+        .mineral {
+            width: 60px;
+            height: 60px;
+            opacity: 0.85;
+        }
+        .header-title {
+            flex: 1;
+            text-align: center;
+        }
+        .header-title h1 {
+            font-size: 3rem;
+            margin: 0;
+            font-family: 'Minecraft', 'Arial Black', Arial, sans-serif;
+            letter-spacing: 2px;
+            text-shadow: 0 2px 8px #2228;
+            color: #FFD700;
+        }
+        .logo-central {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: -18px;
+            margin-bottom: 10px;
+        }
+        .logo-central img {
+            width: 120px;
+            height: auto;
+            filter: drop-shadow(0 4px 12px #2225);
+        }
+        .main-title {
+            text-align: center;
+            font-size: 2.3rem;
+            margin: 16px 0 0 0;
+            font-family: 'Minecraft', 'Arial Black', Arial, sans-serif;
+            color: #FFD700;
+            text-shadow: 0 2px 8px #2228;
+            letter-spacing: 1px;
+        }
+        header nav {
+            margin-top: 24px;
+            display: flex;
+            justify-content: center;
+        }
+        header nav ul {
+            background: rgba(44, 62, 80, 0.85);
+            border-radius: 16px;
+            box-shadow: 0 2px 8px #2223;
+            padding: 12px 32px;
+            margin: 0;
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+        header nav ul li {
+            list-style: none;
+            display: flex;
+            align-items: center;
+        }
+        header nav ul li:not(:last-child)::after {
+            content: "•";
+            color: #fff;
+            font-size: 1.5rem;
+            margin: 0 8px;
+            font-family: 'Minecraft', 'Arial Black', Arial, sans-serif;
+            opacity: 0.8;
+        }
+        header nav ul li a {
+            color: #FFF;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.25rem;
+            letter-spacing: 1px;
+            transition: color 0.2s, background 0.2s, padding 0.2s;
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-family: 'Minecraft', 'Arial Black', Arial, sans-serif;
+        }
+        header nav ul li a:hover {
+            color: #FFD700;
+            background: #fff2;
+            padding: 8px 18px;
+        }
+        /* Main */
+        main {
+            text-align: center;
+            padding: 20px;
+            background-color: #181818;
+        }
+        main h2 {
+            color: #FFD700;
+            font-size: 2rem;
+            font-family: 'Minecraft', 'Arial Black', Arial, sans-serif;
+            text-shadow: 0 2px 8px #2228;
+        }
+        main > p {
+            color: #CCCCCC;
+            font-size: 1.1rem;
+            font-family: 'Minecraft', 'Arial Black', Arial, sans-serif;
+            margin-bottom: 36px;
+        }
+        .dimensiones-container {
+            display: flex;
+            flex-direction: column;
+            gap: 36px;
+            margin-top: 32px;
+            align-items: center;
+        }
+        .dimension {
+            border-radius: 22px;
+            padding: 32px 28px 28px 28px;
+            max-width: 540px;
+            width: 100%;
+            text-align: left;
+            color: #FFF;
+            box-shadow: 0 8px 32px 0 rgba(44, 62, 80, 0.18);
+            border: 2px solid rgba(255,255,255,0.10);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .dimension:hover {
+            transform: translateY(-8px) scale(1.025);
+            box-shadow: 0 16px 40px 0 rgba(44, 62, 80, 0.22);
+        }
+        .dimension img {
+            width: 92%;
+            max-width: 420px;
+            height: 210px;
+            object-fit: cover;
+            border-radius: 16px;
+            margin-bottom: 18px;
+            border: 3px solid #FFD700;
+            background: #fff;
+            box-shadow: 0 2px 12px #2222;
+            display: block;
+        }
+        .dimension h3 {
+            margin: 10px 0 8px 0;
+            font-size: 1.35rem;
+            color: #FFD700;
+            font-family: 'Minecraft', 'Arial Black', Arial, sans-serif;
+            letter-spacing: 1px;
+            text-shadow: 0 2px 8px #2228;
+        }
+        .dimension p {
+            font-size: 1.08rem;
+            line-height: 1.6;
+            color: #f6fbff;
+            margin-bottom: 0;
+            text-shadow: 0 1px 6px #2226;
+        }
+        /* Dimensiones específicas */
+        .dimension.overworld {
+            background: linear-gradient(120deg, #0F3D0F 60%, #56CCF2 100%);
+            border: 2px solid #56CCF2;
+        }
+        .dimension.nether {
+            background: linear-gradient(120deg, #8B0000 60%, #FF4500 100%);
+            border: 2px solid #FF4500;
+        }
+        .dimension.end {
+            background: linear-gradient(120deg, #4B0082 60%, #8A2BE2 100%);
+            border: 2px solid #8A2BE2;
+        }
+        /* Footer */
+        footer {
+            background-color: #1E1E1E;
+            color: #FFF;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+            font-family: 'Minecraft', 'Arial Black', Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-top">
+            <img src="../images/D.png" alt="Diamond Ore" class="mineral mineral-left">
+            <div class="header-title">
+                <h1>Dimensiones</h1>
+            </div>
+            <img src="../images/R.png" alt="Redstone Ore" class="mineral mineral-right">
+        </div>
+        <div class="logo-central">
+            <img src="../images/Logo(sin_fondo).png" alt="Logo UPICRAFT">
+        </div>
+        <h2 class="main-title">Explora las Dimensiones de Minecraft</h2>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="autores.html">Autores</a></li>
+                <li><a href="guias.html">Guías</a></li>
+                <li><a href="biomas.html">Biomas</a></li>
+                <li><a href="mobs.html">Mobs</a></li>
+                <li><a href="ediciones.html">Ediciones</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Explora las Dimensiones de Minecraft</h2>
+        <p>Descubre los misterios, recursos y desafíos únicos de cada dimensión del juego.</p>
+        <div class="dimensiones-container">
+            <!-- Overworld -->
+            <div class="dimension overworld">
+                <img src="../images/Overworld.jpg" alt="Overworld">
+                <h3>Overworld</h3>
+                <p>El punto de partida para todos los jugadores. Llena de biomas variados, desde selvas exuberantes hasta montañas nevadas. Aquí puedes recolectar materiales básicos, construir refugios y explorar aldeas. Es el lugar perfecto para los aventureros principiantes.</p>
+            </div>
+            <!-- Nether -->
+            <div class="dimension nether">
+                <img src="../images/Nether.jpg" alt="Nether">
+                <h3>Nether</h3>
+                <p>Un infierno ardiente lleno de lava y mobs peligrosos como ghasts y blaze. Aquí encontrarás recursos únicos como cuarzo, bloques de Nether y bastiones. Ideal para jugadores experimentados que buscan desafíos extremos y materiales exóticos.</p>
+            </div>
+            <!-- The End -->
+            <div class="dimension end">
+                <img src="../images/The End.jpg" alt="The End">
+                <h3>The End</h3>
+                <p>Una dimensión misteriosa y oscura que alberga al Enderdragón, el jefe final del juego. Sus islas flotantes contienen ciudades del End llenas de shulkers y el preciado Elytra. Solo los más valientes sobreviven en este lugar extraño y desolado.</p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 UPICRAFT - Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

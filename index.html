@@ -2,59 +2,44 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>UPICRAFT</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style/index.css" />
+    <title>UPICRAFT</title>
+    <link rel="icon" href="Logo.png" type="image/png">
+    <link rel="stylesheet" href="style/Estilos.css">
 </head>
-
 <body>
-    <div class="header">
-        <div class="header-row">
-            <img src="./images/bloque_diamante.png" alt="Cubo Minecraft" class="logo side-logo">
-            <span class="title">UPICRAFT</span>
-            <img src="./images/Logo(sin_fondo).png" alt="Logo UPICRAFT" class="logo main-logo">
-            <div class="nav">
-                <span>
-                    <span class="icon">👥</span>
-                    <a href="#">Autores</a>
-                </span>
-                <a href="#">INICIO DE SESION</a>
+    <header>
+        <img src="images/D.png" alt="Bloque de diamante">
+        <h1>UPICRAFT</h1>
+        <img src="images/R.png" alt="Bloque de redstone">
+        <img src="images/Logo(sin_fondo).png" alt="Logo de UPICRAFT" style="display: block; margin: 0px auto; width: 125px; height: auto;">
+        <nav>
+            <a href="pages/Autores.html"><img src="images/Autores.png" alt="Icono de autor">Autores</a>
+            <div class="search-bar">
+                <input type="search" placeholder="Buscar...">
+                <button>Buscar</button>
             </div>
-            <img src="./images/bloque_redstone.webp" alt="Cubo Minecraft" class="logo side-logo">
-        </div>
-    </div>
-    <div class="main">
-        <h2>¿Quienes somos?</h2>
-        <p>
-            <b>UPICRAFT</b> es tu guía definitiva para explorar y disfrutar al maximo el mundo de Minecraft. Aqui encontraras informacion detallada sobre biomas, mobs, dimensiones y mucho mas. Nuestro objetivo es ayudarte a descubrir los secretos de este increible universo, proporcionandote herramientas y conocimientos para convertirte en un verdadero maestro constructor y explorador. <b>¡UPICRAFT tiene algo para todos!</b>
-        </p>
-        <div class="section-list">
-            <a href="pages/guias.html" style="text-decoration:none; color:inherit;">
-                <div class="section-item">
-                    <img src="./images/Librero.webp" alt="/pages/guias.html">
-                    <div class="section-label" style="background:#b22234cc;">Guías</div>
-                </div>
-            </a>
-            <div class="section-item">
-                <img src="./images/Biomas.png" alt="Biomas">
-                <div class="section-label" style="background:#3b6e22cc;">Biomas</div>
-            </div>
-            <div class="section-item">
-                <img src="./images/mobs.jpg" alt="Mobs">
-                <div class="section-label" style="background:#222266cc;">Mobs</div>
-            </div>
-            <div class="section-item">
-                <img src="./images/dimenciones.webp" alt="Dimensiones">
-                <div class="section-label" style="background:#a36e22cc;">Dimensiones</div>
-            </div>
-            <div class="section-item">
-                <img src="images/ediciones.jpg" alt="Ediciones">
-                <div class="section-label" style="background:#226ea3cc;">Ediciones</div>
-            </div>
-        </div>
-    </div>
-    <div class="footer">
-        © Derechos Reservados UPICRAFT
-    </div>
+        </nav>
+    </header>
+    
+
+    <main>
+        <section class="about">
+            <h2>¿Quienes somos?</h2>
+            <p>UPICRAFT es tu guia definitiva para explorar y disfrutar al maximo el mundo de Minecraft. Aquí encontraras informacion detallada sobre biomas, mobs, dimensiones y mucho mas. Nuestro objetivo es ayudarte a descubrir los secretos de este increible universo, proporcionandote herramientas y conocimientos para convertirte en un verdadero maestro constructor y explorador. ¡UPICRAFT tiene algo para todos!</p>
+        </section>
+
+        <ul class="sections">
+            <li><a href="pages/Guias.html">Guias</a></li>
+            <li><a href="pages/Biomas.html">Biomas</a></li>
+            <li><a href="pages/Mobs.html">Mobs</a></li>
+            <li><a href="pages/Dimensiones.html">Dimensiones</a></li>
+            <li><a href="pages/Ediciones.html">Ediciones</a></li>
+        </ul>
+    </main>
+
+    <footer>
+        <p>© Derechos Reservados UPICRAFT</p>
+    </footer>
 </body>
 </html>

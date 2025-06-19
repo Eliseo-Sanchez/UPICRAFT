@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="Logo.png" type="image/png">
+    <title>Biomas</title>
+    <style>
+        @font-face {
+            font-family: 'Minecraft';
+            src: url("../style/minecraftfont.eot");
+            src: url("../style/minecraftfont.woff") format("woff"), url("../style/minecraft.ttf") format("truetype");
+        }
+        /* Estilos generales */
+        body {
+            font-family: 'Minecraft';
+            background-color: #1C1C1C;
+            margin: 0;
+            padding: 0;
+            color: #E0E0E0;
+        }
+        /* Header moderno adaptado */
+        header {
+            background: linear-gradient(135deg, #4E8B3D 60%, #6A4E23 100%);
+            box-shadow: 0 4px 24px rgba(44, 62, 80, 0.15);
+            border-radius: 0 0 24px 24px;
+            padding-bottom: 32px;
+            position: relative;
+        }
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 32px 48px 0 48px;
+        }
+        .mineral {
+            width: 60px;
+            height: 60px;
+            opacity: 0.85;
+        }
+        .header-title {
+            flex: 1;
+            text-align: center;
+        }
+        .header-title h1 {
+            font-size: 3rem;
+            margin: 0;
+            font-family: 'Minecraft', 'Arial Black', Arial, sans-serif;
+            letter-spacing: 2px;
+            text-shadow: 0 2px 8px #2228;
+            color: #FFF;
+        }
+        .logo-central {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: -18px;
+            margin-bottom: 10px;
+        }
+        .logo-central img {
+            width: 120px;
+            height: auto;
+            filter: drop-shadow(0 4px 12px #2225);
+        }
+        .main-title {
+            text-align: center;
+            font-size: 2.3rem;
+            margin: 16px 0 0 0;
+            font-family: 'Minecraft', 'Arial Black', Arial, sans-serif;
+            color: #fff;
+            text-shadow: 0 2px 8px #2228;
+            letter-spacing: 1px;
+        }
+        header nav {
+            margin-top: 24px;
+            display: flex;
+            justify-content: center;
+        }
+        header nav ul {
+            background: rgba(51, 51, 51, 0.85);
+            border-radius: 16px;
+            box-shadow: 0 2px 8px #2223;
+            padding: 12px 32px;
+            margin: 0;
+            display: flex;
+            gap: 12px; /* Reducido de 36px a 12px */
+            align-items: center;
+        }
+        header nav ul li {
+            list-style: none;
+            display: flex;
+            align-items: center;
+        }
+        header nav ul li:not(:last-child)::after {
+            content: "•";
+            color: #fff;
+            font-size: 1.5rem;
+            margin: 0 8px; /* Reducido de 18px a 8px */
+            font-family: 'Minecraft', 'Arial Black', Arial, sans-serif;
+            opacity: 0.8;
+        }
+        header nav ul li a {
+            color: #FFF;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.25rem;
+            letter-spacing: 1px;
+            transition: color 0.2s, background 0.2s, padding 0.2s;
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-family: 'Minecraft', 'Arial Black', Arial, sans-serif;
+        }
+        header nav ul li a:hover {
+            color: #4E8B3D;
+            background: #fff2;
+            padding: 8px 18px;
+        }
+        /* Main */
+        main {
+            text-align: center;
+            padding: 20px;
+            background-color: #3C3C3C;
+        }
+        main h2 {
+            color: #ffe066; /* Amarillo claro para mejor contraste */
+            font-size: 2rem;
+            font-family: 'Minecraft', 'Arial Black', Arial, sans-serif;
+            text-shadow: 0 2px 8px #2228;
+        }
+        .biomas-container {
+            display: flex;
+            flex-direction: column;
+            gap: 36px;
+            margin-top: 32px;
+            align-items: center;
+        }
+        .bioma {
+            background: linear-gradient(120deg, #4E8B3D 60%, #6A4E23 100%);
+            border-radius: 22px;
+            padding: 32px 28px 28px 28px;
+            max-width: 540px;
+            width: 100%;
+            text-align: left;
+            color: #FFF;
+            box-shadow: 0 8px 32px 0 rgba(44, 62, 80, 0.18);
+            border: 1.5px solid rgba(255,255,255,0.10);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .bioma:hover {
+            transform: translateY(-8px) scale(1.025);
+            box-shadow: 0 16px 40px 0 rgba(44, 62, 80, 0.22);
+        }
+        .bioma img {
+            width: 92%;
+            max-width: 420px;
+            height: 210px;
+            object-fit: cover;
+            border-radius: 16px;
+            margin-bottom: 18px;
+            border: 3px solid #ffe066;
+            background: #fff;
+            box-shadow: 0 2px 12px #2222;
+            display: block;
+        }
+        .bioma h3 {
+            margin: 10px 0 8px 0;
+            color: #ffe066;
+            font-size: 1.35rem;
+            font-family: 'Minecraft', 'Arial Black', Arial, sans-serif;
+            letter-spacing: 1px;
+            text-shadow: 0 2px 8px #2228;
+        }
+        .bioma p {
+            font-size: 1.08rem;
+            line-height: 1.6;
+            color: #f6fbff;
+            margin-bottom: 0;
+            text-shadow: 0 1px 6px #2226;
+        }
+        /* Footer */
+        footer {
+            background-color: #1C1C1C;
+            color: #FFF;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+            font-family: 'Minecraft', 'Arial Black', Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-top">
+            <img src="../images/D.png" alt="Diamond Ore" class="mineral mineral-left">
+            <div class="header-title">
+                <h1>Biomas</h1>
+            </div>
+            <img src="../images/R.png" alt="Redstone Ore" class="mineral mineral-right">
+        </div>
+        <div class="logo-central">
+            <img src="../images/Logo(sin_fondo).png" alt="Logo UPICRAFT">
+        </div>
+        <h2 class="main-title">Explora los Biomas de Minecraft</h2>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="Autores.html">Autores</a></li>
+                <li><a href="Guias.html">Guías</a></li>
+                <li><a href="Mobs.html">Mobs</a></li>
+                <li><a href="Dimensiones.html">Dimensiones</a></li>
+                <li><a href="Ediciones.html">Ediciones</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Explora los Biomas de Minecraft</h2>
+        <p>Descubre las características únicas de cada bioma y los recursos que ofrecen.</p>
+        <div class="biomas-container">
+            <div class="bioma">
+                <img src="../images/Bosque.jpg" alt="Bioma Bosque">
+                <h3>Bosque</h3>
+                <p>Un bioma verde lleno de árboles y vida, ideal para recolectar madera y encontrar mobs pasivos como ovejas, vacas, y cerdos. En este bioma también puedes encontrar animales como zorros y ciervos. Las hojas caídas de los árboles caen con el tiempo, y se pueden usar para obtener diferentes tipos de madera y materiales.</p>
+            </div>
+            <div class="bioma">
+                <img src="../images/Desierto.jpg" alt="Bioma Desierto">
+                <h3>Desierto</h3>
+                <p>El bioma desértico se caracteriza por sus grandes extensiones de arena, cactus y templos que se esconden en sus dunas. También es hogar de mobs hostiles como los husks. Este bioma tiene pocos recursos naturales, pero las minas de arena son una buena fuente de bloques y la flora, aunque escasa, ofrece cactus para usar como defensa o ingredientes.</p>
+            </div>
+            <div class="bioma">
+                <img src="../images/Oceano.jpg" alt="Bioma Océano">
+                <h3>Océano</h3>
+                <p>El bioma océano es uno de los biomas más amplios y misteriosos, lleno de vastos cuerpos de agua que se extienden por todo el mundo. En este bioma puedes encontrar delfines, guardianes, y barcos hundidos con cofres llenos de tesoros. Los monumentos submarinos son un desafío en la exploración, y las aguas profundas contienen recursos valiosos como la perla de Ender.</p>
+            </div>
+            <div class="bioma">
+                <img src="../images/Taiga.jpg" alt="Bioma Taiga">
+                <h3>Taiga</h3>
+                <p>Un bioma frío cubierto de pinos, abetos y nieve. Este bioma se caracteriza por su clima gélido y su paisaje de montañas cubiertas de nieve. Es un lugar perfecto para la construcción de refugios invernales y un lugar ideal para encontrar lobos y zorros. Las tundras de la taiga son también un excelente recurso para el hielo y la nieve.</p>
+            </div>
+            <div class="bioma">
+                <img src="../images/Nieve.jpg" alt="Bioma Nieve">
+                <h3>Nieve</h3>
+                <p>Un bioma cubierto completamente de nieve y hielo. Las bajas temperaturas hacen que este bioma sea uno de los más inhóspitos para los jugadores. Sin embargo, en este bioma puedes encontrar animales como conejos y lobos. Además, sus hermosos paisajes nevados, montañas cubiertas de nieve y lagos congelados lo convierten en un lugar perfecto para quienes buscan explorar la belleza natural del juego.</p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 UPICRAFT - Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

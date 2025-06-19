@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="Logo.png" type="image/png">
+    <title>Mobs - UPICRAFT</title>
+    <style>
+        @font-face {
+            font-family: 'Minecraft';
+            src: url("../style/minecraftfont.eot");
+            src: url("../style/minecraftfont.woff") format("woff"), url("../style/minecraft.ttf") format("truetype");
+        }
+        /* Estilos generales */
+        body {
+            font-family: 'Minecraft', 'Arial Black', Arial, sans-serif;
+            background-color: #FFF9F6;
+            margin: 0;
+            padding: 0;
+            color: #4A4A4A;
+        }
+        /* Header moderno adaptado */
+        header {
+            background: #F39C12;
+            box-shadow: 0 4px 24px rgba(44, 62, 80, 0.15);
+            border-radius: 0 0 24px 24px;
+            padding-bottom: 32px;
+            position: relative;
+        }
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 32px 48px 0 48px;
+        }
+        .mineral {
+            width: 60px;
+            height: 60px;
+            opacity: 0.85;
+        }
+        .header-title {
+            flex: 1;
+            text-align: center;
+        }
+        .header-title h1 {
+            font-size: 3rem;
+            margin: 0;
+            font-family: 'Minecraft', 'Arial Black', Arial, sans-serif;
+            letter-spacing: 2px;
+            text-shadow: 0 2px 8px #2228;
+            color: #FFF;
+        }
+        .logo-central {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: -18px;
+            margin-bottom: 10px;
+        }
+        .logo-central img {
+            width: 120px;
+            height: auto;
+            filter: drop-shadow(0 4px 12px #2225);
+        }
+        .main-title {
+            text-align: center;
+            font-size: 2.3rem;
+            margin: 16px 0 0 0;
+            font-family: 'Minecraft', 'Arial Black', Arial, sans-serif;
+            color: #FFF;
+            text-shadow: 0 2px 8px #2228;
+            letter-spacing: 1px;
+        }
+        header nav {
+            margin-top: 24px;
+            display: flex;
+            justify-content: center;
+        }
+        header nav ul {
+            background: rgba(44, 62, 80, 0.85);
+            border-radius: 16px;
+            box-shadow: 0 2px 8px #2223;
+            padding: 12px 32px;
+            margin: 0;
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+        header nav ul li {
+            list-style: none;
+            display: flex;
+            align-items: center;
+        }
+        header nav ul li:not(:last-child)::after {
+            content: "•";
+            color: #fff;
+            font-size: 1.5rem;
+            margin: 0 8px;
+            font-family: 'Minecraft', 'Arial Black', Arial, sans-serif;
+            opacity: 0.8;
+        }
+        header nav ul li a {
+            color: #FFF;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.25rem;
+            letter-spacing: 1px;
+            transition: color 0.2s, background 0.2s, padding 0.2s;
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-family: 'Minecraft', 'Arial Black', Arial, sans-serif;
+        }
+        header nav ul li a:hover {
+            color: #F39C12;
+            background: #fff2;
+            padding: 8px 18px;
+        }
+        /* Main */
+        main {
+            text-align: center;
+            padding: 20px;
+            background-color: #ECF0F1;
+        }
+        main h2 {
+            color: #27AE60;
+            font-size: 2rem;
+            font-family: 'Minecraft', 'Arial Black', Arial, sans-serif;
+            text-shadow: 0 2px 8px #2228;
+        }
+        main > p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #7F8C8D;
+            margin-bottom: 40px;
+        }
+        .mobs-container {
+            display: flex;
+            flex-direction: column;
+            gap: 36px;
+            margin-top: 32px;
+            align-items: center;
+        }
+        .mob {
+            background: linear-gradient(120deg, #F39C12 60%, #D35400 100%);
+            border-radius: 22px;
+            padding: 32px 28px 28px 28px;
+            max-width: 540px;
+            width: 100%;
+            text-align: left;
+            color: #FFF;
+            box-shadow: 0 8px 32px 0 rgba(44, 62, 80, 0.18);
+            border: 1.5px solid rgba(255,255,255,0.10);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .mob:hover {
+            transform: translateY(-8px) scale(1.025);
+            box-shadow: 0 16px 40px 0 rgba(44, 62, 80, 0.22);
+        }
+        .mob img {
+            width: 92%;
+            max-width: 420px;
+            height: 210px;
+            object-fit: cover;
+            border-radius: 16px;
+            margin-bottom: 18px;
+            border: 3px solid #fff;
+            background: #fff;
+            box-shadow: 0 2px 12px #2222;
+            display: block;
+        }
+        .mob h3 {
+            margin: 10px 0 8px 0;
+            color: #ffe066;
+            font-size: 1.35rem;
+            font-family: 'Minecraft', 'Arial Black', Arial, sans-serif;
+            letter-spacing: 1px;
+            text-shadow: 0 2px 8px #2228;
+        }
+        .mob p {
+            font-size: 1.08rem;
+            line-height: 1.6;
+            color: #f6fbff;
+            margin-bottom: 0;
+            text-shadow: 0 1px 6px #2226;
+        }
+        /* Footer */
+        footer {
+            background-color: #2C3E50;
+            color: #FFF;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+            font-family: 'Minecraft', 'Arial Black', Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-top">
+            <img src="../images/D.png" alt="Diamond Ore" class="mineral mineral-left">
+            <div class="header-title">
+                <h1>Mobs</h1>
+            </div>
+            <img src="../images/R.png" alt="Redstone Ore" class="mineral mineral-right">
+        </div>
+        <div class="logo-central">
+            <img src="../images/Logo(sin_fondo).png" alt="Logo UPICRAFT">
+        </div>
+        <h2 class="main-title">Explora los Mobs de Minecraft</h2>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="Autores.html">Autores</a></li>
+                <li><a href="Guias.html">Guías</a></li>
+                <li><a href="Biomas.html">Biomas</a></li>
+                <li><a href="Dimensiones.html">Dimensiones</a></li>
+                <li><a href="Ediciones.html">Ediciones</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Conoce los tipos de Mobs</h2>
+        <p>En Minecraft, los mobs son criaturas que habitan el mundo y que interactúan con el jugador de diversas formas. Aquí te explicamos los diferentes tipos de mobs que podrás encontrar:</p>
+        <div class="mobs-container">
+            <div class="mob">
+                <img src="../images/Pasivos.jpg" alt="Mob Pasivo">
+                <h3>Pasivos</h3>
+                <p>Los mobs pasivos son criaturas amigables que no atacan al jugador. A menudo, pueden ser domesticados, montados o utilizados para obtener recursos. Son esenciales para las actividades cotidianas del jugador.</p>
+            </div>
+            <div class="mob">
+                <img src="../images/Hostiles.avif" alt="Mob Hostil">
+                <h3>Hostiles</h3>
+                <p>Los mobs hostiles son criaturas que atacan al jugador. Aparecen principalmente durante la noche o en lugares oscuros, y su objetivo es dañar o eliminar al jugador. Estos mobs ofrecen un reto y son una parte importante del juego.</p>
+            </div>
+            <div class="mob">
+                <img src="../images/Neutrales.jpg" alt="Mob Neutro">
+                <h3>Neutrales</h3>
+                <p>Los mobs neutrales no atacan al jugador a menos que este les provoque. Aunque generalmente son pacíficos, pueden volverse hostiles si el jugador les hace daño o invade su espacio.</p>
+            </div>
+            <div class="mob">
+                <img src="../images/Jefes.jpg" alt="Mob Boss">
+                <h3>Boss</h3>
+                <p>Los mobs tipo boss son criaturas poderosas que representan grandes desafíos para el jugador. Derrotarlos requiere de estrategia y preparación. Al ser derrotados, suelen otorgar grandes recompensas.</p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 UPICRAFT - Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

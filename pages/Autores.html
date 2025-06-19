@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="Logo.png" type="image/png">
+    <title>Autores - UPICRAFT</title>
+    <style>
+        @font-face {
+            font-family: 'Minecraft';
+            src: url("../style/minecraftfont.eot");
+            src: url("../style/minecraftfont.woff") format("woff"), url("../style/minecraft.ttf") format("truetype");
+        }
+        body {
+            font-family: 'Minecraft', Arial, sans-serif;
+            background-color: #000000;
+            margin: 0;
+            padding: 0;
+            color: #FFFFFF;
+        }
+        header {
+            background: linear-gradient(135deg, #333333 60%, #444444 100%);
+            box-shadow: 0 4px 24px rgba(44, 62, 80, 0.15);
+            border-radius: 0 0 24px 24px;
+            padding-bottom: 32px;
+            position: relative;
+        }
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 32px 48px 0 48px;
+        }
+        .mineral {
+            width: 60px;
+            height: 60px;
+            opacity: 0.85;
+        }
+        .header-title {
+            flex: 1;
+            text-align: center;
+        }
+        .header-title h1 {
+            font-size: 3rem;
+            margin: 0;
+            font-family: 'Minecraft', 'Arial Black', Arial, sans-serif;
+            letter-spacing: 2px;
+            text-shadow: 0 2px 8px #2228;
+        }
+        .logo-central {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: -18px;
+            margin-bottom: 10px;
+        }
+        .logo-central img {
+            width: 120px;
+            height: auto;
+            filter: drop-shadow(0 4px 12px #2225);
+        }
+        .main-title {
+            text-align: center;
+            font-size: 2.3rem;
+            margin: 16px 0 0 0;
+            font-family: 'Minecraft', 'Arial Black', Arial, sans-serif;
+            color: #fff;
+            text-shadow: 0 2px 8px #2228;
+            letter-spacing: 1px;
+        }
+        header nav {
+            margin-top: 24px;
+            display: flex;
+            justify-content: center;
+        }
+        header nav ul {
+            background: rgba(44, 62, 80, 0.85);
+            border-radius: 16px;
+            box-shadow: 0 2px 8px #2223;
+            padding: 12px 32px;
+            margin: 0;
+            display: flex;
+            gap: 36px;
+        }
+        header nav ul li {
+            display: inline;
+        }
+        header nav ul li a {
+            color: #FFF;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.25rem;
+            letter-spacing: 1px;
+            transition: color 0.2s, background 0.2s, padding 0.2s;
+            padding: 6px 14px;
+            border-radius: 8px;
+        }
+        header nav ul li a:hover {
+            color: #1abc9c;
+            background: #fff2;
+            padding: 8px 18px;
+        }
+        main {
+            text-align: center;
+            padding: 20px;
+        }
+        main h2 {
+            color: #FFFFFF;
+            font-size: 2rem;
+        }
+        .autores-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .autor {
+            background-color: #444444;
+            border-radius: 10px;
+            padding: 15px;
+            max-width: 300px;
+            text-align: center;
+            color: #FFFFFF;
+        }
+        .autor img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            border: 3px solid #777777;
+        }
+        .autor h3 {
+            margin: 10px 0 5px;
+            color: #DDDDDD;
+        }
+        .autor p {
+            font-size: 0.9rem;
+            line-height: 1.4;
+            color: #CCCCCC;
+        }
+        footer {
+            background-color: #333333;
+            color: #FFFFFF;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+        /* ----------------- RESPONSIVE DESIGN ----------------- */
+        @media (max-width: 900px) {
+            .header-top {
+                padding: 24px 16px 0 16px;
+            }
+            .logo-central img {
+                width: 90px;
+            }
+            .main-title {
+                font-size: 1.7rem;
+            }
+            header nav ul {
+                gap: 18px;
+                padding: 10px 10px;
+            }
+        }
+        @media (max-width: 700px) {
+            .header-top {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+                padding: 18px 4vw 0 4vw;
+            }
+            .mineral {
+                width: 48px;
+                height: 48px;
+            }
+            .header-title h1 {
+                font-size: 2.1rem;
+            }
+            .logo-central img {
+                width: 70px;
+            }
+            header nav ul {
+                flex-direction: column;
+                gap: 10px;
+                padding: 10px 0;
+            }
+            header nav ul li {
+                display: block;
+            }
+        }
+        @media (max-width: 600px) {
+            main {
+                padding: 10px 2vw;
+            }
+            .autores-container {
+                flex-direction: column;
+                align-items: center;
+                gap: 16px;
+            }
+            .autor {
+                max-width: 95vw;
+                padding: 10px;
+            }
+            .autor img {
+                width: 80px;
+                height: 80px;
+            }
+            main h2 {
+                font-size: 1.3rem;
+            }
+        }
+        @media (max-width: 400px) {
+            .header-title h1 {
+                font-size: 1.2rem;
+            }
+            .main-title {
+                font-size: 1rem;
+            }
+            .logo-central img {
+                width: 48px;
+            }
+            .autor img {
+                width: 60px;
+                height: 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-top">
+            <img src="../images/D.png" alt="Diamond Ore" class="mineral mineral-left">
+            <div class="header-title">
+                <h1>UPICRAFT</h1>
+            </div>
+            <img src="../images/R.png" alt="Redstone Ore" class="mineral mineral-right">
+        </div>
+        <div class="logo-central">
+            <img src="../images/Logo(sin_fondo).png" alt="Logo UPICRAFT">
+        </div>
+        <h2 class="main-title">Autores</h2>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="Autores.html">Autores</a></li>
+                <li><a href="Guias.html">Guías</a></li>
+                <li><a href="Biomas.html">Biomas</a></li>
+                <li><a href="Mobs.html">Mobs</a></li>
+                <li><a href="Dimensiones.html">Dimensiones</a></li>
+                <li><a href="Ediciones.html">Ediciones</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Conoce a los Autores</h2>
+        <div class="autores-container">
+            <div class="autor">
+                <img src="../images/Perfil.jpg" alt="Foto de José Miguel">
+                <h3>José Miguel Ponce Alarcón</h3>
+                <p>Desarrollador web con amplia experiencia en la creación de aplicaciones y sitios interactivos. Su pasión por Minecraft lo llevó a especializarse en mecánicas avanzadas, redstone y diseño de mapas. Dentro de UPICRAFT, lidera el desarrollo técnico, asegurándose de que cada guía esté respaldada por un código robusto y funcional. Además, es el encargado de implementar actualizaciones basadas en los comentarios de los usuarios para mejorar constantemente la experiencia.</p>
+            </div>
+            <div class="autor">
+                <img src="../images/Perfil.jpg" alt="Foto de Set Sahid">
+                <h3>Set Sahid Ramos Caballero</h3>
+                <p>Creativo diseñador gráfico y artista digital con un enfoque en la estética visual y la narrativa visual. Su contribución principal a UPICRAFT es la creación de un diseño cohesivo, con elementos gráficos que reflejan la esencia de Minecraft. También es responsable de diseñar interfaces amigables para el usuario y crear ilustraciones que complementan las guías, haciendo el contenido más accesible y atractivo.</p>
+            </div>
+            <div class="autor">
+                <img src="../images/Perfil.jpg" alt="Foto de Cristian Eliseo">
+                <h3>Cristian Eliseo Sánchez Rivera</h3>
+                <p>Investigador y escritor apasionado por los videojuegos y su impacto cultural. En UPICRAFT, se dedica a estructurar la información de forma clara y precisa, redactando guías detalladas que abordan desde consejos básicos hasta estrategias avanzadas. Además, Cristian coordina las tareas de documentación y garantiza que el contenido se mantenga actualizado con las últimas novedades del juego.</p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 UPICRAFT - Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
